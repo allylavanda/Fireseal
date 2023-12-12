@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.Properties;
 
 public class ConfigFileHandler {
-    private File configFile = new File("src/config.properties");
     private String HasSelectedDir;
     private String savedDir;
     public ConfigFileHandler() throws IOException {
@@ -15,9 +14,7 @@ public class ConfigFileHandler {
         HasSelectedDir = prop.getProperty("selected");
         savedDir = prop.getProperty("savedDir");
     }
-    public boolean getHasSelectedDir(){
-        return HasSelectedDir.equalsIgnoreCase("true");
-    }
+    public boolean getHasSelectedDir(){return HasSelectedDir.equalsIgnoreCase("true");}
     public void setHasSelectedDir(Boolean selected) throws IOException {
         Properties prop = new Properties();
         FileInputStream ip = new FileInputStream("src/config.properties");
@@ -28,9 +25,7 @@ public class ConfigFileHandler {
         prop.store(op,"Properties File");
         op.close();
     }
-    public String getSavedDir(){
-        return savedDir;
-    }
+    public String getSavedDir(){return savedDir;}
     public void setSavedDir(String setDir) throws IOException {
         Properties prop = new Properties();
         FileInputStream ip = new FileInputStream("src/config.properties");
@@ -40,8 +35,5 @@ public class ConfigFileHandler {
         prop.put("savedDir",setDir);
         prop.store(op,"Properties File");
         op.close();
-    }
-    public boolean configFileExists(){
-        return configFile.exists();
     }
 }
