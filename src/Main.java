@@ -1,4 +1,5 @@
-import GUI.GetInstallDir;
+
+import GUI.InstallDir;
 import Handlers.ConfigFileHandler;
 
 import java.io.IOException;
@@ -9,9 +10,7 @@ public class Main {
         ConfigFileHandler config = new ConfigFileHandler();
         System.out.println(config.getSavedDir());
         if(config.getHasSelectedDir()){
-            System.out.println("DEBUG"); // run program
-        } else {
-            new GetInstallDir(); // get install dir if not set
+            new InstallDir();
         }
     }
 }
